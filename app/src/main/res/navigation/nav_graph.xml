@@ -18,4 +18,28 @@
         android:name="com.team_noyeah.hankyung_adroid.WritingMemberInformationFragment"
         android:label="fragment_writing_member_information"
         tools:layout="@layout/fragment_writing_member_information" />
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.team_noyeah.hankyung_adroid.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_verifyFragment"
+            app:destination="@id/verifyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nickNameFragment"
+        android:name="com.team_noyeah.hankyung_adroid.NickNameFragment"
+        android:label="fragment_nick_name"
+        tools:layout="@layout/fragment_nick_name" />
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.team_noyeah.hankyung_adroid.verifyFragment"
+        android:label="fragment_verify"
+        tools:layout="@layout/fragment_verify" >
+        <action
+            android:id="@+id/action_verifyFragment_to_nickNameFragment"
+            app:destination="@id/nickNameFragment" />
+    </fragment>
 </navigation>
