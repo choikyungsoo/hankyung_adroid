@@ -106,7 +106,9 @@ public class WritingMemberInformationFragment extends Fragment {
 //                    Log.v("submit", Integer.toString(gender_radiogroup.getCheckedRadioButtonId()));
                     Toast.makeText(getContext(), "성별을 선택해주세요.", Toast.LENGTH_LONG).show();
                 }
-//                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_writingMemberInformationFragment);
+                else {
+                    Navigation.findNavController(view).navigate(R.id.action_writingMemberInformationFragment_to_verifyFragment);
+                }
             }
         });
     }
