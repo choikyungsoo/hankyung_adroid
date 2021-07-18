@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class WritingMemberInformationFragment extends Fragment {
     private EditText birthDay_text;
     private RadioGroup gender_radiogroup;
     private Button gotoVerifyingYourself_btn;
+    private ImageButton gotologinFragment_btn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +53,7 @@ public class WritingMemberInformationFragment extends Fragment {
         this.birthDay_text = view.findViewById(R.id.birthDay);
         this.gender_radiogroup = view.findViewById(R.id.genderRadioGroup);
         this.gotoVerifyingYourself_btn = view.findViewById(R.id.gotoVerifyingYourselfBTN);
+        this.gotologinFragment_btn = view.findViewById(R.id.backArrow);
 
 
         this.gotoVerifyingYourself_btn.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +112,13 @@ public class WritingMemberInformationFragment extends Fragment {
                 else {
                     Navigation.findNavController(view).navigate(R.id.action_writingMemberInformationFragment_to_verifyFragment);
                 }
+            }
+        });
+
+        this.gotologinFragment_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.loginFragment);
             }
         });
     }

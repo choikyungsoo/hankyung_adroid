@@ -2,16 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/verifyScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     tools:context=".verifyFragment">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/nextBTN"
         android:layout_width="355dp"
         android:layout_height="54dp"
 
+        android:layout_marginBottom="52dp"
         android:background="#FF375C"
         android:text="다음"
         android:textColor="#FFFFFF"
@@ -19,10 +21,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintTop_toBottomOf="@+id/agree3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/verifybtn"
@@ -39,11 +40,69 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.655" />
 
+    <CheckBox
+        android:id="@+id/agree3"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:button="@drawable/login_checkbox_attribute"
+        android:paddingLeft="5dp"
+        android:text="SNS/이메일 정보 수신동의(선택)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agree2"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <CheckBox
+        android:id="@+id/agreeAll"
+        android:layout_width="330dp"
+        android:layout_height="29dp"
+        android:button="@drawable/login_checkbox_attribute"
+        android:paddingLeft="5dp"
+        android:text="전체 동의합니다."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <CheckBox
+        android:id="@+id/agree1"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:button="@drawable/login_checkbox_attribute"
+        android:paddingLeft="5dp"
+        android:text="이용약관 동의(필수)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <CheckBox
+        android:id="@+id/agree2"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:button="@drawable/login_checkbox_attribute"
+        android:paddingLeft="5dp"
+        android:text="개인정보 수집이용 동의(필수)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agree1"
+        app:layout_constraintVertical_bias="0.074" />
+
     <EditText
         android:id="@+id/phoneinput"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:ems="10"
+        android:hint="제외하고 입력"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,55 +124,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="이용약관 동의(필수)"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:rotationY="180"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toEndOf="@+id/agree2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:rotationY="180"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toEndOf="@+id/agree3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.134" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:rotationY="180"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toEndOf="@+id/agree1"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="SNS / 이메일 정보 수신 동의(선택)"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton4"
-        app:layout_constraintVertical_bias="0.052" />
-
-    <RadioButton
-        android:id="@+id/radioButton4"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="개인정보 수입이용 동의(필수)"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton3"
-        app:layout_constraintVertical_bias="0.038" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="156dp"
-        android:layout_height="27dp"
-        android:text="전체 동의합니다."
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <TextView
         android:id="@+id/textView2"
@@ -144,30 +192,27 @@
         app:layout_constraintVertical_bias="0.013" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="140dp"
-        android:layout_height="23dp"
-        android:text="이용 약관 동의"
+        android:id="@+id/timer"
+        android:layout_width="62dp"
+        android:layout_height="21dp"
         android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/inputverifycode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputverifycode"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneinput"
+        app:layout_constraintVertical_bias="0.6" />
 
     <View
         android:id="@+id/view"
-        android:layout_width="362dp"
+        android:layout_width="369dp"
         android:layout_height="0.4dp"
         android:background="#989898"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton"
+        app:layout_constraintTop_toBottomOf="@+id/agreeAll"
         app:layout_constraintVertical_bias="0.046" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -198,16 +243,45 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/timer"
-        android:layout_width="62dp"
-        android:layout_height="21dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/inputverifycode"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneinput"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintTop_toBottomOf="@+id/inputverifycode"
+        app:layout_constraintVertical_bias="0.041">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.02" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:text="이용약관동의"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/warningText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="right"
+            android:textColor="#FF0000" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
