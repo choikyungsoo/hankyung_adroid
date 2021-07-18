@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".NickNameFragment">
 
     <Button
@@ -21,11 +22,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/inputverifycode"
         app:layout_constraintVertical_bias="0.202" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/nbackBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
@@ -47,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/inputverifycode"
         app:layout_constraintVertical_bias="0.037" />
 
     <TextView
@@ -66,7 +67,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/inputverifycode"
         android:layout_width="355dp"
         android:layout_height="51dp"
         android:background="@drawable/nickname_border"

@@ -3,6 +3,7 @@ package com.team_noyeah.hankyung_adroid;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,12 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class NickNameFragment extends Fragment {
+public class NickNameFragment extends Fragment implements View.OnClickListener {
 
     private EditText nickinput;
     private TextView textsize;
+    private ImageButton nback;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -23,8 +26,11 @@ public class NickNameFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_nick_name, container, false);
 
-        nickinput = view.findViewById(R.id.nickinput);
-        textsize = view.findViewById(R.id.textsize);
+        this.nickinput = view.findViewById(R.id.nickinput);
+        this.textsize = view.findViewById(R.id.textsize);
+        this.nback = view.findViewById(R.id.nbackBTN);
+
+        this.nback.setOnClickListener(this);
 
         return view;
     }
@@ -47,5 +53,14 @@ public class NickNameFragment extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.nbackBTN:
+                Navigation.findNavController(v).navigate(R.id.verifyFragment);
+                break;
+        }
     }
 }
