@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import java.util.regex.Pattern;
 public class WritingMemberInformationFragment extends Fragment {
 
     private InputMethodManager inputMethodManager;
+
+    private ImageButton backArrow;
 
     private EditText id_text;
     private EditText pw_text;
@@ -43,6 +46,8 @@ public class WritingMemberInformationFragment extends Fragment {
 
         this.inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 
+        this.backArrow = view.findViewById(R.id.backArrow);
+
         this.id_text = view.findViewById(R.id.IDBlank);
         this.pw_text = view.findViewById(R.id.PWBlank);
         this.pw_check_text = view.findViewById(R.id.PWCheckBlank);
@@ -51,6 +56,13 @@ public class WritingMemberInformationFragment extends Fragment {
         this.birthDay_text = view.findViewById(R.id.birthDay);
         this.gender_radiogroup = view.findViewById(R.id.genderRadioGroup);
         this.gotoVerifyingYourself_btn = view.findViewById(R.id.gotoVerifyingYourselfBTN);
+
+        this.backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
         this.gotoVerifyingYourself_btn.setOnClickListener(new View.OnClickListener() {
             @Override
