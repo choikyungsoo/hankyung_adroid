@@ -26,7 +26,7 @@ public class LoginFragment extends Fragment {
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        this.close_btn = view.findViewById(R.id.close);
+        this.close_btn = view.findViewById(R.id.nbackBTN);
         this.signUp_btn = view.findViewById(R.id.signUpBTN);
 
         this.close_btn.setOnClickListener(new View.OnClickListener() {
