@@ -52,31 +52,69 @@ public class WritingMemberInformationFragment extends Fragment {
         this.gender_radiogroup = view.findViewById(R.id.genderRadioGroup);
         this.gotoVerifyingYourself_btn = view.findViewById(R.id.gotoVerifyingYourselfBTN);
 
-
         this.gotoVerifyingYourself_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(id_text.getText().toString().equals("")){
                     Toast.makeText(getContext(),"아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
-//                    id_text.
+                    id_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(pw_text.getText().toString().equals("")){
                     Toast.makeText(getContext(),"비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    pw_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(pw_text.getText().toString().length()<8){
-                    Toast.makeText(getContext(),"비밀번호를 8자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),pw_text.getText().toString()+"비밀번호를 8자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    pw_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(!Pattern.matches("^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~`]+$", pw_text.getText().toString())){
                     Toast.makeText(getContext(),"비밀번호는 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합해주세요.", Toast.LENGTH_SHORT).show();
+                    pw_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
+
+                //Only 영문
+                else if(pw_text.getText().toString().matches(".*[a-zA-Z]+.*")
+                        &&!pw_text.getText().toString().matches(".*[0-9]+.*")
+                        &&!pw_text.getText().toString().matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~`]+.*")){
+                    Toast.makeText(getContext(),"Only 영문", Toast.LENGTH_SHORT).show();
+                    pw_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                }
+                //Only 숫자
+                else if(!pw_text.getText().toString().matches(".*[a-zA-Z]+.*")
+                        &&pw_text.getText().toString().matches(".*[0-9]+.*")
+                        &&!pw_text.getText().toString().matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~`]+.*")){
+                    Toast.makeText(getContext(),"Only 숫자", Toast.LENGTH_SHORT).show();
+                    pw_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                }
+                //Only 특수문자
+                else if(!pw_text.getText().toString().matches(".*[a-zA-Z]+.*")
+                        &&!pw_text.getText().toString().matches(".*[0-9]+.*")
+                        &&pw_text.getText().toString().matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~`]+.*")){
+                    Toast.makeText(getContext(),"Only 특수문자", Toast.LENGTH_SHORT).show();
+                    pw_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                }
+
                 else if(pw_check_text.getText().toString().equals("")){
                     Toast.makeText(getContext(),"비밀번호 확인을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    pw_check_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(birthYear_text.getText().toString().equals("")){
                     Toast.makeText(getContext(),"생년월일을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    birthYear_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(birthMonth_text.getText().toString().equals("")){
                     Toast.makeText(getContext(),"생년월일을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    birthMonth_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(Integer.parseInt(birthMonth_text.getText().toString())>12){
                     Toast.makeText(getContext(),"생년월일을 다시 입력해주세요.", Toast.LENGTH_SHORT).show();
@@ -85,6 +123,8 @@ public class WritingMemberInformationFragment extends Fragment {
                 }
                 else if(birthDay_text.getText().toString().equals("")){
                     Toast.makeText(getContext(),"생년월일을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    birthDay_text.requestFocus();
+                    inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 else if(((Integer.parseInt(birthMonth_text.getText().toString()) == 1
                         || Integer.parseInt(birthMonth_text.getText().toString()) == 3
