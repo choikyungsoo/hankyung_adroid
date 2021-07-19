@@ -37,4 +37,9 @@
             android:id="@+id/action_verifyFragment_to_nickNameFragment"
             app:destination="@id/nickNameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.team_noyeah.hankyung_adroid.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

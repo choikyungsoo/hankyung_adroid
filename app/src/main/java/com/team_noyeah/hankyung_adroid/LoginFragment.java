@@ -8,10 +8,12 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class LoginFragment extends Fragment {
 
+    private ImageButton close_btn;
     private TextView signUp_btn;
 
 
@@ -23,7 +25,18 @@ public class LoginFragment extends Fragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
+        this.close_btn = view.findViewById(R.id.close);
         this.signUp_btn = view.findViewById(R.id.signUpBTN);
+
+        this.close_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                getActivity().onBackPressed();
+                getActivity().finish();
+            }
+        });
+
         this.signUp_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
