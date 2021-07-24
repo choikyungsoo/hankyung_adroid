@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainSearchFragment">
+    app:startDestination="@id/placeInformationFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.team_noyeah.hankyung_adroid.LoginFragment"
@@ -45,10 +45,18 @@
         <action
             android:id="@+id/action_mainFragment_to_mainSearchFragment"
             app:destination="@id/mainSearchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_placeInformationFragment"
+            app:destination="@id/placeInformationFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainSearchFragment"
         android:name="com.team_noyeah.hankyung_adroid.MainSearchFragment"
         android:label="fragment_main_search"
         tools:layout="@layout/fragment_main_search" />
+    <fragment
+        android:id="@+id/placeInformationFragment"
+        android:name="com.team_noyeah.hankyung_adroid.PlaceInformationFragment"
+        android:label="fragment_place_information"
+        tools:layout="@layout/fragment_place_information" />
 </navigation>

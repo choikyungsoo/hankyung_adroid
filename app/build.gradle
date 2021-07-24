@@ -68,4 +68,12 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth'
+
+    //장소 정보에서 이미지를 보여주는 라이브러리
+    // ViewPager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
