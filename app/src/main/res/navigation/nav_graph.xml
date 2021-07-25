@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/placeInformationFragment">
+    app:startDestination="@id/placeInformationMain">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.team_noyeah.hankyung_adroid.LoginFragment"
@@ -46,8 +46,8 @@
             android:id="@+id/action_mainFragment_to_mainSearchFragment"
             app:destination="@id/mainSearchFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_placeInformationFragment"
-            app:destination="@id/placeInformationFragment" />
+            android:id="@+id/action_mainFragment_to_placeInformationMain"
+            app:destination="@id/placeInformationMain" />
     </fragment>
     <fragment
         android:id="@+id/mainSearchFragment"
@@ -57,6 +57,22 @@
     <fragment
         android:id="@+id/placeInformationFragment"
         android:name="com.team_noyeah.hankyung_adroid.PlaceInformationFragment"
-        android:label="fragment_place_information"
-        tools:layout="@layout/fragment_place_information" />
+        android:label="fragment_place_information" />
+    <fragment
+        android:id="@+id/placeInformationMain"
+        android:name="com.team_noyeah.hankyung_adroid.PlaceInformationMain"
+        android:label="fragment_place_information_main"
+        tools:layout="@layout/fragment_place_information_main" >
+        <action
+            android:id="@+id/action_placeInformationMain_to_placeInformationFragment"
+            app:destination="@id/placeInformationFragment" />
+        <action
+            android:id="@+id/action_placeInformationMain_to_placeDescriptionScreenFragment"
+            app:destination="@id/placeDescriptionScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeDescriptionScreenFragment"
+        android:name="com.team_noyeah.hankyung_adroid.PlaceDescriptionScreenFragment"
+        android:label="fragment_place_description_screen"
+        tools:layout="@layout/fragment_place_description_screen" />
 </navigation>
