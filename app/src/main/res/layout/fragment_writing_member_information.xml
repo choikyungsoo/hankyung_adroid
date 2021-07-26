@@ -229,7 +229,7 @@
 
     </RadioGroup>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/gotoVerifyingYourselfBTN"
         android:layout_width="370dp"
         android:layout_height="43dp"
