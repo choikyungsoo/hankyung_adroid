@@ -9,7 +9,7 @@
     tools:context=".NickNameFragment">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/completeSignUp_btn"
         android:layout_width="355dp"
         android:layout_height="54dp"
 

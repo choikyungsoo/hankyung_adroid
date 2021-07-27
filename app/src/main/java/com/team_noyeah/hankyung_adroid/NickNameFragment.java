@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class NickNameFragment extends Fragment implements View.OnClickListener {
     private EditText nickinput;
     private TextView textsize;
     private ImageButton nback;
+    private Button completeSignUp_btn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,8 +31,10 @@ public class NickNameFragment extends Fragment implements View.OnClickListener {
         this.nickinput = view.findViewById(R.id.nickinput);
         this.textsize = view.findViewById(R.id.textsize);
         this.nback = view.findViewById(R.id.nbackBTN);
+        this.completeSignUp_btn = view.findViewById(R.id.completeSignUp_btn);
 
         this.nback.setOnClickListener(this);
+        this.completeSignUp_btn.setOnClickListener(this);
 
         return view;
     }
@@ -60,6 +64,9 @@ public class NickNameFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.nbackBTN:
                 Navigation.findNavController(v).navigate(R.id.verifyFragment);
+                break;
+            case R.id.completeSignUp_btn:
+                Navigation.findNavController(v).navigate(R.id.action_nickNameFragment_to_loginFragment);
                 break;
         }
     }

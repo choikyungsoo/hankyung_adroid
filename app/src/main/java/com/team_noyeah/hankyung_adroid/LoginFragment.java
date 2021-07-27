@@ -8,13 +8,15 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private ImageButton close_btn;
     private TextView signUp_btn;
+    private Button LoginBTN;
 
 
     @Override
@@ -28,20 +30,41 @@ public class LoginFragment extends Fragment {
 
         this.close_btn = view.findViewById(R.id.nbackBTN);
         this.signUp_btn = view.findViewById(R.id.signUpBTN);
+        this.LoginBTN = view.findViewById(R.id.LoginBTN);
 
-        this.close_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                getActivity().onBackPressed();
+        this.close_btn.setOnClickListener(this);
+        this.signUp_btn.setOnClickListener(this);
+        this.LoginBTN.setOnClickListener(this);
+
+//        this.close_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                getActivity().onBackPressed();
+//                getActivity().finish();
+//            }
+//        });
+//
+//        this.signUp_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_writingMemberInformationFragment);
+//            }
+//        });
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.nbackBTN:
                 getActivity().finish();
-            }
-        });
-
-        this.signUp_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_writingMemberInformationFragment);
-            }
-        });
+                break;
+            case R.id.signUpBTN:
+                Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_writingMemberInformationFragment);
+                break;
+            case R.id.LoginBTN:
+                Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_mainFragment);
+                break;
+        }
     }
 }
